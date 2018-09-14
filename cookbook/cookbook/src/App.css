@@ -112,10 +112,6 @@ label {
   margin-left: 45px;
 }
 
-/*.Login {*/
-/*display: none;*/
-/*}*/
-
 .user-login {
   margin-left: 20px;
 }
@@ -128,7 +124,6 @@ label {
 }
 
 .recept-edit-cake {
-  /*border: 1px solid #00040e;*/
   width: 470px;
   height: 400px;
 }
@@ -148,6 +143,7 @@ label {
   width: 270px;
   height: 270px;
   display: block;
+  margin-left: -40px;
 }
 
 .recept-control-button {
@@ -186,10 +182,6 @@ h2.recept-name {
   height: 210px;
 }
 
-li.ul-li {
-  list-style-type: none;
-}
-
 .recept-edit-button {
   padding-top: 75px;
 }
@@ -204,10 +196,6 @@ li.ul-li {
   background-color: #e8ebea;
   font-size: 17px
 }
-
-/*.Recept-edit {*/
-  /*display: none;*/
-/*}*/
 
 .dashboard {
   font-family: 'Brush Script MT', Trattatello;
@@ -276,15 +264,11 @@ li.ul-li {
 
 .list-ingredients-dish {
   width: 200px;
+  font-size: 25px;
 }
 
 ol {
-  font-size: 30px;
   margin: 0px;
-}
-
-.dish-ingredient {
-  font-size: 25px;
 }
 
 .sum-ingredients {
@@ -293,7 +277,7 @@ ol {
   font-size: 30px;
 }
 
-.manage-recipe-button {
+.button-remove {
   height: 30px;
   width: 150px;
   border-radius: 3px;
@@ -305,7 +289,7 @@ ol {
   margin: 20px 20px;
 }
 
-/*.Recepts {*/
-  /*display: none;*/
-/*}*/
+a {
+  text-decoration: none;
+}
 

@@ -1,30 +1,28 @@
-import React, { Component } from 'react';
+import React, {Component, Fragment} from 'react';
+import {Link, Route} from 'react-router-dom';
 import logo from './logo.svg';
 import './App.css';
-import {Login} from "./pages/autorization-page";
-import {Recepts} from "./pages/recepts-page";
-import {ReceptEdit} from "./pages/edit-recept-page";
+import {Login} from "./pages/autorization-page/autorization-page";
+import {Recepts} from "./pages/recepts-page/recepts-page";
+import {ReceptEdit} from "./pages/edit-recept-page/edit-recept-page";
+import {HeaderComponent} from "./shared-components/header-component";
 
 class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      activePage: 'login'
-    }
-  }
+  // constructor() {
+  //   super();
+  //   this.state = {
+  //     activePage: 'recepts'
+  //   }
+  // }
   render() {
-
-    if(this.state.activePage === 'login') {
-      return <Login />
-    }
-
-    if(this.state.activePage === 'recepts') {
-      return <Recepts />
-    }
-
-    if(this.state.activePage === 'recept-edit') {
-      return <ReceptEdit />
-    }
+    return (
+      <Fragment>
+        <HeaderComponent withUser={true}/>
+        <Route exact path="/login-page" component={Login}/>
+        <Route exact path="/recepts" component={Recepts}/>
+        <Route exact path="/recept-edit" component={ReceptEdit}/>
+      </Fragment>
+    );
   }
 }
 
