@@ -1,0 +1,27 @@
+.container {
+  border: 1px solid #adadad;
+  height: 350px;
+  width: 300px;
+  margin: 30px auto;
+}
+
+.styleInput {
+  width: 250px;
+  height: 23px;
+  display: block;
+  margin: 10px 20px;
+  border-radius: 4px;
+}
+
+.styleButton {
+  display: block;
+  background-color: #8ac858;
+  color: white;
+  width: 255px;
+  height: 35px;
+  margin: 10px 20px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-size: 12px;
+}
