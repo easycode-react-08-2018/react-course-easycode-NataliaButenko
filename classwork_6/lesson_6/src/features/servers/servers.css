@@ -1,0 +1,11 @@
+.server-list {
+  list-style: none;
+}
+
+.history {
+  height: 300px;
+  width: 600px;
+  border: 2px solid green;
+  margin-left: 400px;
+  overflow: auto;
+}
