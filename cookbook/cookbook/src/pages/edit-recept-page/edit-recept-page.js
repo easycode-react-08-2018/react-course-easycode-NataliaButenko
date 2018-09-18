@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import imgCake from '../../images/cake.png';
-import {ListIngredientsComponent} from "../../shared-components/list-ingredients-component";
-import {ButtonRemoveComponent} from "../../shared-components/button-remove";
+import {ListIngredientsComponent} from "../../shared-components/list-ingredients-component/list-ingredients-component";
+import {ButtonRemoveComponent} from "../../shared-components/button-remove/button-remove";
+import './edit-recept-page.css';
 
 export class ReceptEdit extends Component {
   render() {

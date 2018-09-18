@@ -1,8 +1,16 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
 import {ReceptListComponent} from "./components-recepts-page/recepts-list-component";
+import './recepts-page.css';
 
-export class Recepts extends Component {
+export class ReceptsComponent extends Component {
+
   render() {
+    const {
+      recepts
+    } = this.props;
+    console.log(recepts);
+
     return(
       <div className="Recepts">
         <main className="main-recepts">
@@ -16,14 +24,19 @@ export class Recepts extends Component {
             </button>
           </div>
           <div className="recepts-list">
-            <ReceptListComponent/>
-            <ReceptListComponent/>
-            <ReceptListComponent/>
-            <ReceptListComponent/>
-            <ReceptListComponent/>
+            <ReceptListComponent recepts={recepts}/>
           </div>
         </main>
       </div>
     )
-  }
+  };
 }
+
+const mapStateToProps = (state) => {
+  console.log(state);
+  return {
+    recepts: state,
+  };
+};
+
+export const Recepts = connect(mapStateToProps)(ReceptsComponent);

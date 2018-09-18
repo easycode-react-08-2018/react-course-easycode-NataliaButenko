@@ -1,0 +1,32 @@
+.dish {
+  border: 1px solid #00040e;
+  height: 140px;
+  margin: 15px 15px;
+  background-color: #dab6c8;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  overflow: auto;
+}
+
+.img-dish {
+  width: 160px;
+  height: 130px;
+  margin-top: 5px;
+  margin-left: 10px;
+}
+
+.list-ingredients-dish {
+  width: 200px;
+  font-size: 25px;
+}
+
+ol {
+  margin: 0px;
+}
+
+.sum-ingredients {
+  text-align: center;
+  padding-top: 50px;
+  font-size: 30px;
+}
