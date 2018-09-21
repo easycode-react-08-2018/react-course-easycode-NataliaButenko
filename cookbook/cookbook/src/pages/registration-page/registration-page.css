@@ -1,12 +1,12 @@
-.authorization_form {
+.registration_form {
   border: 1px solid #00040e;
-  height: 330px;
+  height: 350px;
   width: 400px;
   margin: 60px auto;
   background-color: #dab6c8;
 }
 
-.authorization_caption {
+.registration_caption {
   text-align: center;
   margin: 7px 0px;
 }
@@ -17,28 +17,22 @@ label {
   font-size: 35px;
 }
 
-.authorization_input {
+.registration_input {
   height: 25px;
   width: 150px;
   margin-left: 10px;
   background-color: #e8ebea;
 }
 
-.authorization_button {
+.registration_button {
   height: 45px;
   width: 150px;
   background-color: #e8ebea;
   color: #a6dcee;
-  margin: 10px auto;
+  margin: 0px auto;
   font-size: 35px;
   border-radius: 3px;
   display: block;
-}
-
-.registration {
-  font-size: 35px;
-  padding-left: 130px;
-  color: #5389a6;
 }
 
 .error-message {

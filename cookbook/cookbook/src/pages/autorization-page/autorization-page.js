@@ -3,9 +3,11 @@ import { withRouter } from 'react-router'
 import {Link} from 'react-router-dom';
 import './autorization-page.css';
 import {API_USERS} from "../../api/api";
-import {Recepts} from "../recepts-page/recepts-page";
+import connect from "react-redux/es/connect/connect";
+import {autorizationUser} from "../../store/actions/user-action/autorization-user";
+import {clearUser} from "../../store/actions/user-action/clear-user";
 
-class Login extends Component {
+class AutorizationComponent extends Component {
   constructor() {
     super();
     this.state = {
@@ -24,12 +26,12 @@ class Login extends Component {
   onSignInClick = (e) => {
     e.preventDefault();
 
-    const {history} = this.props;
+    const {history, autorizationUser, clearUser} = this.props;
 
     let options = {
       method: 'POST',
       headers: {'Content-Type':'application/json'},
-      body: JSON.stringify(this.state.userObj) //{ user:"sa", password: "admin" }
+      body: JSON.stringify(this.state.userObj)
     };
 
     fetch(API_USERS, options)
@@ -41,13 +43,14 @@ class Login extends Component {
         }
       })
       .then(data => {
-        console.log('data', data);
+        //console.log('data', data);
+        autorizationUser(data);
         history.push('/recepts');
       })
       .catch(data => {
-        console.log('catch data', data);
+        //console.log('catch data', data);
         this.setState({error: true});
-        console.log(this.state);
+        //console.log(this.state);
       });
   };
 
@@ -78,8 +81,7 @@ class Login extends Component {
               }
               <button className="authorization_button"
                       onClick={this.onSignInClick}>Sign in</button>
-
-              <label><input className="authorization_checkbox" type="checkbox" defaultChecked/>Remember me</label>
+              <Link to='/registration-page'><span className='registration'>Registration</span></Link>
             </form>
           </div>
         </main>
@@ -88,4 +90,16 @@ class Login extends Component {
   }
 }
 
-export default withRouter(Login);
+const mapStateToProps = (state) => {
+  //console.log('state', state);
+  return {
+    user: state.user
+  };
+};
+
+const mapDispatchToProps = {
+  autorizationUser,
+  clearUser
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(AutorizationComponent));

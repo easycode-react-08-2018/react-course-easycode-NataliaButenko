@@ -5,11 +5,11 @@ export class ListIngredientsComponent extends Component {
     const{
       ingredients
     } = this.props;
-
+    //console.log('ListIngredientsComponent props', this.props);
     return(
       <ol>
         {
-          ingredients.map(ingredient => {
+          ingredients && ingredients.map(ingredient => {
             return (<li>{ingredient.name}</li>)
           })
         }
