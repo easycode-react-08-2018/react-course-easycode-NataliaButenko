@@ -2,16 +2,19 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {ReceptListComponent} from "./components-recepts-page/recepts-list-component";
 import './recepts-page.css';
+import {selectFilterText} from "../../selectors/select-filter-text";
+import {selectFilteredRecepts} from "../../selectors/select-filtered-recepts";
 import {addRecept} from "../../store/actions/recepts-actions/add-recept";
 import {removeRecept} from "../../store/actions/recepts-actions/remove-recept";
 import {createId} from "../../utils/createId";
+import {filterRecept} from "../../store/actions/recepts-actions/filter-recept";
 
 const newRecept = {
-  name: "Recept 3",
+  name: "Paste",
   id: createId(),
   ingredients: [
     {
-      name: "Ingridient 01",
+      name: "egg",
       id: createId(),
       quantity: 1
     },
@@ -44,34 +47,39 @@ const newRecept = {
 };
 
 export class ReceptsComponent extends Component {
-
   addNewRecept = () => {
     const {addRecept} = this.props;
-    //console.log(newRecept);
     addRecept(newRecept);
+  };
+
+  onInputChange = (e) => {
+    const{filterRecept} = this.props;
+    filterRecept(e.target.value)
   };
 
   render() {
     const {
-      recepts,
-      removeRecept
+      removeRecept,
+      filteredRecepts,
+      filterText
     } = this.props;
 
     return(
       <div className="Recepts">
         <main className="main-recepts">
           <div className="dashboard">
-            <input className="entry-field" type="text" placeholder="Fragment of name or ingredient"/>
-            <button className="find">
-              To find
-            </button>
+            <input className="entry-field"
+                   type="text"
+                   placeholder="Fragment of name or ingredient"
+                   value={filterText}
+                   onChange={this.onInputChange} />
             <button className="add-recipe"
                     onClick={this.addNewRecept}>
               Add recipe
             </button>
           </div>
           <div className="recepts-list">
-            <ReceptListComponent recepts={recepts} removeRecept={removeRecept}/>
+            <ReceptListComponent recepts={filteredRecepts} removeRecept={removeRecept}/>
           </div>
         </main>
       </div>
@@ -81,13 +89,16 @@ export class ReceptsComponent extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    recepts: state.recepts
+    recepts: state.recepts,
+    filterText: selectFilterText(state),
+    filteredRecepts: selectFilteredRecepts(state)
   };
 };
 
 const mapDispatchToProps = {
   addRecept,
-  removeRecept
+  removeRecept,
+  filterRecept
 };
 
 export const Recepts = connect(mapStateToProps, mapDispatchToProps)(ReceptsComponent);

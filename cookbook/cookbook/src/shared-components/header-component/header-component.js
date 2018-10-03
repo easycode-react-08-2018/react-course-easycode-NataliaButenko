@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {Link} from 'react-router-dom';
+//import {Link} from 'react-router-dom';
 import imgCookBook from "../../images/cookbook.png";
 import './header-component.css';
 import AuthUserWrapper from "../../hoc/authUserWrapper";
@@ -11,7 +11,6 @@ class HeaderComponent extends Component {
 
   checkUserName = () => {
     const {user} = this.props;
-    //console.log('user', user);
     const isEmpty = (user) => {
       for (let key in user) {
         return `${user.message.user.name}`;
@@ -23,7 +22,6 @@ class HeaderComponent extends Component {
 
   checkRegistration = () => {
     const {user} = this.props;
-    //console.log('user', user);
     const isEmpty = (user) => {
       for (let key in user) {
         return 'Sign out';
@@ -35,8 +33,6 @@ class HeaderComponent extends Component {
 
   clearUser = () => {
     const {clearUser, history} = this.props;
-    //console.log(this.props);
-    //console.log('clearUser', clearUser);
     clearUser();
     history.push('/autorization-page');
   };

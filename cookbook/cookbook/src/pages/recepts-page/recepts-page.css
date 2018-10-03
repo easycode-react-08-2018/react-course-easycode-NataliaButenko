@@ -44,3 +44,7 @@
   color: #5389a6;
   overflow: auto;
 }
+
+.recepts-list .list-ingredients-dish input {
+  display: none;
+}

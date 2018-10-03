@@ -1,39 +1,50 @@
-import {INGREDIENTS} from "../../actions/ingredients-action/ingredients";
+import {INGREDIENTS_TRIGGER} from "../../actions/ingredients-action/ingredients";
 import {createId} from "../../../utils/createId";
 
-const initialState = [
+let id1 = createId();
+let id2 = createId();
+let id3 = createId();
+let id4 = createId();
+let id5 = createId();
+
+export const initialState = [
   {
     name: 'Ingridient 01',
-    id: createId(),
+    id: id1,
     quantity: 0
   },
   {
     name: 'Ingridient 02',
-    id: createId(),
+    id: id2,
     quantity: 0
   },
   {
     name: 'Ingridient 03',
-    id: createId(),
+    id: id3,
     quantity: 0
   },
   {
     name: 'Ingridient 04',
-    id: createId(),
+    id: id4,
     quantity: 0
   },
   {
     name: 'Ingridient 05',
-    id: createId(),
+    id: id5,
     quantity: 0
   }
 ];
 
 export const ingredientsReducer = (state = initialState, action) => {
   switch (action.type) {
-    case INGREDIENTS: {
-
-      return
+    case INGREDIENTS_TRIGGER: {
+      let newIngredients = state.map(ingredient => {
+        if(ingredient.id === action.payload.ingredientId) {
+          return {...ingredient, checked: !ingredient.checked};
+        }
+        return ingredient;
+      });
+      return newIngredients;
     }
     default: {
       return state;

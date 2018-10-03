@@ -3,8 +3,9 @@ import {Link} from 'react-router-dom';
 import imgCake from "../../../images/cake.png";
 import {ListIngredientsComponent} from "../../../shared-components/list-ingredients-component/list-ingredients-component";
 import {ButtonRemoveComponent} from "../../../shared-components/button-remove/button-remove";
-import {ReceptEdit} from "../../edit-recept-page/edit-recept-page";
+//import {ReceptEdit} from "../../edit-recept-page/edit-recept-page";
 import './recepts-list-component.css';
+//import {filterRecept} from "../../../store/actions/recepts-actions/filter-recept";
 
 export class ReceptListComponent extends Component {
 
@@ -14,19 +15,16 @@ export class ReceptListComponent extends Component {
       removeRecept
     } = this.props;
 
-    //console.log('ReceptListComponent props', this.props);
-
     return(
-      recepts.map(recept => {
-        //console.log('recept', recept);
+      recepts.map((recept, index) => {
         return(
-          <div className="dish">
+          <div className="dish" key={recept.name + index}>
             <div className="img-dish">
               <img src={imgCake} alt="dish" className="img-dish"/>
             </div>
             <div className="list-ingredients-dish">
               {recept.name}
-              <ListIngredientsComponent ingredients={recept.ingredients}/>
+              <ListIngredientsComponent recept={recept} viewMode={true}/>
             </div>
             <div className="sum-ingredients">
               Sum of ingredients {recept.ingredients.length}

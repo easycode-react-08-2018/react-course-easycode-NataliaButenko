@@ -1,10 +1,21 @@
-export const INGREDIENTS = 'ingredients';
+export const INGREDIENTS_TRIGGER = 'INGREDIENTS_TRIGGER';
+export const TRIGGER_INGRIDIENT_STATE = 'TRIGGER_INGRIDIENT_STATE';
 
-export const ingredients = (ingredient) => {
+export const ingredientsTrigger = (ingredientId) => {
   return {
-    type: INGREDIENTS,
+    type: INGREDIENTS_TRIGGER,
     payload: {
-      ingredient
+      ingredientId
     }
   }
+};
+
+export const triggerIngridientState = (receptId, ingredientId) => {
+  return {
+    type: TRIGGER_INGRIDIENT_STATE,
+    payload: {
+      receptId,
+      ingredientId
+    }
+  };
 };

@@ -26,7 +26,7 @@ class AutorizationComponent extends Component {
   onSignInClick = (e) => {
     e.preventDefault();
 
-    const {history, autorizationUser, clearUser} = this.props;
+    const {history, autorizationUser} = this.props;
 
     let options = {
       method: 'POST',
@@ -43,14 +43,11 @@ class AutorizationComponent extends Component {
         }
       })
       .then(data => {
-        //console.log('data', data);
         autorizationUser(data);
         history.push('/recepts');
       })
       .catch(data => {
-        //console.log('catch data', data);
         this.setState({error: true});
-        //console.log(this.state);
       });
   };
 
@@ -91,7 +88,6 @@ class AutorizationComponent extends Component {
 }
 
 const mapStateToProps = (state) => {
-  //console.log('state', state);
   return {
     user: state.user
   };
@@ -102,4 +98,4 @@ const mapDispatchToProps = {
   clearUser
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(withRouter(AutorizationComponent));
+export const Authorization = withRouter(connect(mapStateToProps, mapDispatchToProps)(AutorizationComponent));
