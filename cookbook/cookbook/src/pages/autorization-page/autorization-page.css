@@ -1,0 +1,49 @@
+.authorization_form {
+  border: 1px solid #00040e;
+  height: 330px;
+  width: 400px;
+  margin: 60px auto;
+  background-color: #dab6c8;
+}
+
+.authorization_caption {
+  text-align: center;
+  margin: 7px 0px;
+}
+
+label {
+  display: block;
+  margin: 10px 50px;
+  font-size: 35px;
+}
+
+.authorization_input {
+  height: 25px;
+  width: 150px;
+  margin-left: 10px;
+  background-color: #e8ebea;
+}
+
+.authorization_button {
+  height: 45px;
+  width: 150px;
+  background-color: #e8ebea;
+  color: #a6dcee;
+  margin: 10px auto;
+  font-size: 35px;
+  border-radius: 3px;
+  display: block;
+}
+
+.registration {
+  font-size: 35px;
+  padding-left: 130px;
+  color: #5389a6;
+}
+
+.error-message {
+  color: red;
+  margin: 0px 10px;
+  font-size: 20px;
+  text-align: center;
+}

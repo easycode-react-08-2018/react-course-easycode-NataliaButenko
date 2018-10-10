@@ -1,0 +1,50 @@
+.dashboard {
+  font-family: 'Brush Script MT', Trattatello;
+  color: #5389a6;
+  font-size: 20px;
+  margin: 25px auto;
+  padding-left: 100px;
+}
+
+.entry-field {
+  border: 1px solid #00040e;
+  height: 25px;
+  width: 300px;
+  background-color: #e8ebea;
+}
+
+.find {
+  height: 35px;
+  width: 150px;
+  background-color: #e8ebea;
+  font-family: 'Brush Script MT', Trattatello;
+  color: #5389a6;
+  font-size: 21px;
+  margin-left: 20px;
+  border: 1px solid #00040e;
+}
+
+.add-recipe {
+  height: 35px;
+  width: 150px;
+  background-color: #e8ebea;
+  font-family: 'Brush Script MT', Trattatello;
+  color: #5389a6;
+  font-size: 21px;
+  margin-right: 100px;
+  border: 1px solid #00040e;
+  float: right;
+}
+
+.recepts-list {
+  border: 2px solid #00040e;
+  height: 440px;
+  margin: 25px 30px;
+  font-family: 'Brush Script MT', Trattatello;
+  color: #5389a6;
+  overflow: auto;
+}
+
+.recepts-list .list-ingredients-dish input {
+  display: none;
+}

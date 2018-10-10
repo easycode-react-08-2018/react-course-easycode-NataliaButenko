@@ -1,0 +1,36 @@
+.header-container {
+  border: 2px solid #00040e;
+  height: 60px;
+  margin: 10px 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-family: 'Brush Script MT', Trattatello;
+  font-size: 40px;
+  color: #5389a6;
+  background-color: #dab6c8;
+}
+
+.login-button {
+  height: 40px;
+  width: 200px;
+  font-family: 'Brush Script MT', Trattatello;
+  font-size: 40px;
+  color: #5389a6;
+  background-color: #dab6c8;
+  border: none;
+  vertical-align: top;
+}
+
+.img-cookbook {
+  height: 50px;
+  width: 60px;
+}
+
+.navigation {
+  margin-right: 20px;
+}
+
+.user-login {
+  margin-left: 20px;
+}
