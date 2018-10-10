@@ -38,13 +38,7 @@ export const initialState = [
 export const ingredientsReducer = (state = initialState, action) => {
   switch (action.type) {
     case INGREDIENTS_TRIGGER: {
-      let newIngredients = state.map(ingredient => {
-        if(ingredient.id === action.payload.ingredientId) {
-          return {...ingredient, checked: !ingredient.checked};
-        }
-        return ingredient;
-      });
-      return newIngredients;
+      return action.payload(state);
     }
     default: {
       return state;

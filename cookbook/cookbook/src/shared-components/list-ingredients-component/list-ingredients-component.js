@@ -4,17 +4,11 @@ import './list-ingredients-component.css';
 export class ListIngredientsComponent extends Component {
   onCheckboxClick = id => e => {
     const {recept, triggerIngridientState} = this.props;
-    console.log('recept', recept);
-    console.log('id ingredient', id)
     triggerIngridientState(recept.id, id);
   };
 
-  render() {
-    const{
-      recept,
-      viewMode
-    } = this.props;
-
+  renderReducer = () => {
+    const {recept, viewMode} = this.props;
     if(viewMode === true) {
       return (
         <ol>
@@ -46,5 +40,9 @@ export class ListIngredientsComponent extends Component {
         </ol>
       )
     };
+  }
+
+  render() {
+    return (this.renderReducer());
   }
 }

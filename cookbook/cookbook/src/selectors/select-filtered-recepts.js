@@ -23,13 +23,12 @@ export const selectFilteredRecepts = (state) => {
     return done;
   }, []);
 
-  if(receptName.length === 0) {
-    if(ingridientName.length === 0) {
-      return []
-    } else {
-      return ingridientName
-    }
-  } else {
-    return receptName
+  if(receptName.length) {
+    return receptName;
   }
+
+  if(ingridientName.length) {
+    return ingridientName;
+  }
+  return [];
 };
